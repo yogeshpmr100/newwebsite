@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherVerse Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Welcome Animation -->
+    <div class="welcome-animation">
+        <div class="welcome-content">
+            <div class="logo-animation">
+                <img src="https://img.icons8.com/fluency/96/000000/weather.png" alt="Weather Logo">
+            </div>
+            <h1>Welcome to WeatherVerse Pro</h1>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="website-header">
+        <h1>WeatherVerse Pro</h1>
+        <div class="header-links">
+            <button class="about-btn"></button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="left-panel">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search location here">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+
+            <div class="today-overview">
+                <div class="section-header">
+                    <h3>Today Overview</h3>
+                    <a href="#" class="more-details">More details ></a>
+                </div>
+                
+                <div class="weather-stats">
+                    <div class="stat-item">
+                        <img src="https://img.icons8.com/fluency/48/000000/wind.png" alt="Wind">
+                        <div class="stat-value">
+                            <p class="stat-label">Wind Speed</p>
+                            <h4>12 km/h</h4>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <img src="https://img.icons8.com/fluency/48/000000/rain.png" alt="Rain">
+                        <div class="stat-value">
+                            <p class="stat-label">Precipitation</p>
+                            <h4>24%</h4>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <img src="https://img.icons8.com/fluency/48/000000/temperature.png" alt="Temperature">
+                        <div class="stat-value">
+                            <p class="stat-label">Temperature</p>
+                            <h4>23°C</h4>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <img src="https://img.icons8.com/fluency/48/000000/humidity.png" alt="Humidity">
+                        <div class="stat-value">
+                            <p class="stat-label">Humidity</p>
+                            <h4>65%</h4>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weekly-forecast">
+                    <h3>Weekly Forecast</h3>
+                    <div class="forecast-slider">
+                        <button class="slider-btn prev">❮</button>
+                        <div class="forecast-container">
+                            <div class="forecast-wrapper">
+                                <!-- Forecast cards will be added here by JavaScript -->
+                            </div>
+                        </div>
+                        <button class="slider-btn next">❯</button>
+                    </div>
+                </div>
+
+                <div class="temperature-graph">
+                    <h3>Temperature Trend</h3>
+                    <div class="graph-container">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="location-header">
+                <h2 id="city-name">City Name</h2>
+                <p id="current-time">08:54 AM</p>
+            </div>
+            
+            <div class="current-weather">
+                <div class="weather-icon">🌥️</div>
+                <h1>20° C</h1>
+                <p>Dramatic Cloudy</p>
+            </div>
+
+            <div class="rain-chance">
+                <h3>Chance of rain</h3>
+                <div class="rain-timeline">
+                    <div class="time-slot">
+                        <span>9 PM</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 44%"></div>
+                        </div>
+                        <span>44%</span>
+                    </div>
+                    <div class="time-slot">
+                        <span>12 PM</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 55%"></div>
+                        </div>
+                        <span>55%</span>
+                    </div>
+                    <div class="time-slot">
+                        <span>3 PM</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span>75%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sunrise-sunset">
+                <h3>Sunrise & Sunset</h3>
+                <div class="time-info">
+                    <div class="sunrise">
+                        <img src="https://img.icons8.com/fluency/48/000000/sunrise.png" alt="Sunrise">
+                        <span>4:20 AM</span>
+                    </div>
+                    <div class="sunset">
+                        <img src="https://img.icons8.com/fluency/48/000000/sunset.png" alt="Sunset">
+                        <span>5:50 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h1></h1>
+            <div class="about-content">
+                <p></p>
+                <div class="about-features">
+                    <h2></h2>
+                    <ul>
+            
+                    </ul>
+                </div>
+                <div class="about-contact">
+                    <h1></h1>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
